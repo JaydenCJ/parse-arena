@@ -1,0 +1,28 @@
+{
+  "blocks": [
+    "Membership Application Form",
+    "Filled-in application received through the web portal. Field values must survive parsing verbatim for downstream extraction.",
+    "Applicant Applicant\nFull name Hanako Tanaka\nDate of birth 1990-04-12\nEmail hanako@example.com\nMembership Membership\nPlan Pro\nStart date 2026-08-01\nAnnual fee 120 USD",
+    "Signed by the applicant on 2026-07-02."
+  ],
+  "tables": [
+    [
+      [{"text": "Applicant", "colspan": 2}],
+      ["Full name", "Hanako Tanaka"],
+      ["Date of birth", "1990-04-12"],
+      ["Email", "hanako@example.com"],
+      [{"text": "Membership", "colspan": 2}],
+      ["Plan", "Pro"],
+      ["Start date", "2026-08-01"],
+      ["Annual fee", "120 USD"]
+    ]
+  ],
+  "fields": {
+    "full_name": "Hanako Tanaka",
+    "date_of_birth": "1990-04-12",
+    "email": "hanako@example.com",
+    "plan": "Pro",
+    "start_date": "2026-08-01",
+    "annual_fee": "120 USD"
+  }
+}

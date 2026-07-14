@@ -1,0 +1,18 @@
+{
+  "blocks": [
+    "Ticket Volume by Quarter",
+    "Team 2026 H1 2026 H2",
+    "Q1 Q2 Q3 Q4",
+    "Alpha 10 12 14 16",
+    "Bravo 8 9 11 12",
+    "Each half-year header cell spans two quarter columns."
+  ],
+  "tables": [
+    [
+      [{"text": "Team", "rowspan": 2}, {"text": "2026 H1", "colspan": 2}, {"text": "2026 H2", "colspan": 2}],
+      ["Q1", "Q2", "Q3", "Q4"],
+      ["Alpha", "10", "12", "14", "16"],
+      ["Bravo", "8", "9", "11", "12"]
+    ]
+  ]
+}

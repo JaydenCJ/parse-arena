@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Vertical text sample: Makura no Soshi opening</title>
+</head>
+<body>
+<!--
+  Vertical Japanese layout fixture. The page is written vertically
+  (writing-mode: vertical-rl): columns are read top-to-bottom and
+  RIGHT-to-LEFT. Column elements below are deliberately listed in DOM
+  order left-to-right (ascending CSS left offset), mimicking OCR and PDF
+  extractors that emit text in geometric scan order. A layout-aware parser
+  must reorder them by descending left offset to recover the true reading
+  order. The text is the public-domain opening of Makura no Soshi.
+-->
+<div class="page" style="position: relative; writing-mode: vertical-rl;" data-writing-mode="vertical-rl">
+  <div class="col" style="position: absolute; top: 40px; left: 120px;" data-left="120">冬はつとめて。雪の降りたるはいふべきにもあらず。</div>
+  <div class="col" style="position: absolute; top: 40px; left: 200px;" data-left="200">秋は夕暮れ。夕日のさして山の端いと近うなりたるに。</div>
+  <div class="col" style="position: absolute; top: 40px; left: 280px;" data-left="280">夏は夜。月のころはさらなり。やみもなほ、蛍の多く飛びちがひたる。</div>
+  <div class="col" style="position: absolute; top: 40px; left: 360px;" data-left="360">春はあけぼの。やうやう白くなりゆく山ぎは、すこしあかりて。</div>
+</div>
+</body>
+</html>

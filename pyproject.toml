@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "parse-arena"
+version = "0.1.0"
+description = "A neutral, reproducible benchmark harness and static leaderboard for document parsers, with a dedicated Japanese track (vertical text, receipts)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "JaydenCJ" }]
+keywords = ["benchmark", "document-parsing", "pdf", "ocr", "leaderboard", "japanese"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Text Processing :: General",
+]
+dependencies = [
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+pdf = ["pypdf>=4.0"]
+# dev includes the pdf extra's dependency so `pip install -e ".[dev]"` alone
+# runs the full test suite (the pypdf-dependent tests skip when it is absent).
+dev = ["pytest>=8.0", "pypdf>=4.0"]
+
+[project.scripts]
+parse-arena = "parse_arena.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/JaydenCJ/parse-arena"
+Repository = "https://github.com/JaydenCJ/parse-arena"
+Issues = "https://github.com/JaydenCJ/parse-arena/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+parse_arena = ["fixtures/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,55 @@
+# One command serves a freshly generated leaderboard:
+#   docker compose up -d
+#   open http://127.0.0.1:8080/
+#
+# The harness service installs parse-arena from this repository, runs the
+# benchmark on the built-in dataset and writes the static site into the
+# arena-site named volume; nginx then serves the volume read-only. The first
+# run needs network access (image pulls + PyPI for PyYAML/pypdf). Re-run
+# `docker compose up -d` to re-benchmark and re-publish. To publish results
+# for your own dataset instead, edit the `parse-arena run` line below to add
+# `--manifest /src/path/to/manifest.yaml` (paths under /src are this repo).
+# Set PARSE_ARENA_PORT in .env to change the host port.
+services:
+  harness:
+    image: python:3.11-slim
+    working_dir: /work
+    # The repository mount stays read-only: pip builds local directories
+    # in-tree, so the source is staged into a scratch copy first.
+    command:
+      - /bin/sh
+      - -ec
+      - |
+        mkdir -p /work/src
+        tar -C /src -cf - --exclude=./.git --exclude=./.venv --exclude=./venv \
+          --exclude=./.pytest_cache --exclude=./site --exclude=./build \
+          --exclude=./dist . | tar -C /work/src -xf -
+        pip install --quiet --no-cache-dir '/work/src[pdf]'
+        parse-arena run --parsers all --out /work/results.json
+        parse-arena report /work/results.json --out /dest
+        echo 'leaderboard generated into volume'
+    volumes:
+      - .:/src:ro
+      - arena-site:/dest
+    restart: "no"
+
+  web:
+    image: nginx:1.27.3-alpine
+    depends_on:
+      harness:
+        condition: service_completed_successfully
+    ports:
+      # Loopback only by default; change deliberately if you want LAN access.
+      - "127.0.0.1:${PARSE_ARENA_PORT:-8080}:80"
+    volumes:
+      - arena-site:/usr/share/nginx/html:ro
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+
+volumes:
+  arena-site:

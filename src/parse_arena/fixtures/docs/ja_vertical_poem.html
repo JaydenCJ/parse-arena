@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Vertical text sample: Ame ni mo makezu</title>
+</head>
+<body>
+<!--
+  Second vertical-layout fixture: the opening lines of Miyazawa Kenji's
+  public-domain poem "Ame ni mo makezu". As in the essay fixture, DOM order
+  is geometric left-to-right while the true vertical reading order is
+  right-to-left (descending left offset).
+-->
+<div class="page" style="position: relative; writing-mode: vertical-rl;" data-writing-mode="vertical-rl">
+  <div class="col" style="position: absolute; top: 30px; left: 60px;" data-left="60">丈夫ナカラダヲモチ</div>
+  <div class="col" style="position: absolute; top: 30px; left: 130px;" data-left="130">雪ニモ夏ノ暑サニモマケヌ</div>
+  <div class="col" style="position: absolute; top: 30px; left: 200px;" data-left="200">風ニモマケズ</div>
+  <div class="col" style="position: absolute; top: 30px; left: 270px;" data-left="270">雨ニモマケズ</div>
+</div>
+</body>
+</html>

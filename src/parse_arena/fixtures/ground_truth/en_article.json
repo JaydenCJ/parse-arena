@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    "Choosing a document parser is harder than it looks.",
+    "Every vendor publishes a benchmark where their own parser wins. The numbers are real, but the datasets are hand-picked, the competitors are misconfigured, and the metrics are chosen after the results are known. Engineers building retrieval pipelines end up choosing parsers by anecdote.",
+    "A neutral benchmark needs three properties. The dataset must be public and versioned, the metrics must be documented formulas anyone can recompute, and the whole run must be reproducible with one command on commodity hardware.",
+    "parse-arena is a small harness built around those three properties. It is not affiliated with any parser vendor, and every score on its leaderboard links back to the exact command that produced it."
+  ]
+}

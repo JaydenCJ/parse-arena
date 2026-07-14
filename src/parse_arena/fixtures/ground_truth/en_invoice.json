@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    "PARSE ARENA INVOICE 2026-0042",
+    "Date: 2026-06-30",
+    "Bill to: Example Research Lab",
+    "Item: document parsing benchmark subscription",
+    "Quantity: 3",
+    "Unit price: 42.00 USD",
+    "Total: 126.00 USD",
+    "Payment due within 30 days."
+  ]
+}

@@ -1,0 +1,60 @@
+# Built-in synthetic dataset for parse-arena.
+# Paths are relative to this file. Every document has a ground-truth JSON
+# (text blocks in reading order, optional tables/fields) and a track label.
+name: parse-arena-builtin
+documents:
+  - id: en-article
+    file: docs/en_article.txt
+    ground_truth: ground_truth/en_article.json
+    track: en-text
+    description: Plain-text English article, paragraph reading order.
+  - id: en-report
+    file: docs/en_report.html
+    ground_truth: ground_truth/en_report.json
+    track: en-table
+    description: English HTML report with a 4x3 data table.
+  - id: en-invoice
+    file: docs/en_invoice.pdf
+    ground_truth: ground_truth/en_invoice.json
+    track: en-text
+    description: Generated single-page PDF invoice (see scripts/gen_pdf_fixture.py).
+  - id: en-pricing
+    file: docs/en_pricing.pdf
+    ground_truth: ground_truth/en_pricing.json
+    track: en-table
+    description: Generated PDF with tabular pricing data (table recovery required).
+  - id: en-schedule
+    file: docs/en_schedule.html
+    ground_truth: ground_truth/en_schedule.json
+    track: en-table
+    description: HTML schedule table with colspan/rowspan merged cells.
+  - id: en-tickets
+    file: docs/en_tickets.pdf
+    ground_truth: ground_truth/en_tickets.json
+    track: en-table
+    description: Generated PDF whose table header merges cells across columns.
+  - id: en-form-application
+    file: docs/en_form_application.html
+    ground_truth: ground_truth/en_form_application.json
+    track: en-form
+    description: Born-digital form (table-based label/value layout) with field ground truth.
+  - id: ja-vertical-essay
+    file: docs/ja_vertical_essay.html
+    ground_truth: ground_truth/ja_vertical_essay.json
+    track: ja-vertical
+    description: Vertical-rl Japanese essay; columns must be read right-to-left.
+  - id: ja-vertical-poem
+    file: docs/ja_vertical_poem.html
+    ground_truth: ground_truth/ja_vertical_poem.json
+    track: ja-vertical
+    description: Vertical-rl Japanese poem; columns must be read right-to-left.
+  - id: ja-receipt-conbini
+    file: docs/ja_receipt_conbini.html
+    ground_truth: ground_truth/ja_receipt_conbini.json
+    track: ja-receipt
+    description: Japanese convenience-store receipt with item table and totals.
+  - id: ja-receipt-izakaya
+    file: docs/ja_receipt_izakaya.txt
+    ground_truth: ground_truth/ja_receipt_izakaya.json
+    track: ja-receipt
+    description: Japanese izakaya receipt as plain text.

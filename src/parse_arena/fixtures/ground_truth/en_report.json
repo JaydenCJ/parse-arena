@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    "Quarterly Parser Evaluation",
+    "This report summarizes the second-quarter evaluation of three internal document parsing services against the shared regression dataset.",
+    "Service Primary track Mean score\nAlpha en-text 0.91\nBeta ja-vertical 0.84\nGamma en-table 0.77",
+    "Gamma regressed on merged-cell tables and is scheduled for retraining before the next release window."
+  ],
+  "tables": [
+    [
+      ["Service", "Primary track", "Mean score"],
+      ["Alpha", "en-text", "0.91"],
+      ["Beta", "ja-vertical", "0.84"],
+      ["Gamma", "en-table", "0.77"]
+    ]
+  ]
+}

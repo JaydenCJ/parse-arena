@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Meeting Room Schedule</title>
+</head>
+<body>
+<h1>Meeting Room Schedule</h1>
+<p>Booking grid for the third floor. The header merges the two morning
+slots, and the afternoon workshop spans both rooms.</p>
+<!--
+  Merged-cell fixture: the header row uses rowspan and colspan, and one data
+  cell spans two rows. Ground truth stores the spans explicitly; the metric
+  expands them onto the logical grid, so a parser that drops the merge loses
+  exactly the covered cells.
+-->
+<table>
+<tr><th rowspan="2">Room</th><th colspan="2">Morning</th><th rowspan="2">Afternoon</th></tr>
+<tr><th>09:00</th><th>11:00</th></tr>
+<tr><td>Aoi</td><td>Standup</td><td>Design review</td><td rowspan="2">Workshop</td></tr>
+<tr><td>Kiku</td><td>Interview</td><td>Hiring sync</td></tr>
+</table>
+<p>Bookings outside these slots go through the front desk.</p>
+</body>
+</html>

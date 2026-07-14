@@ -1,0 +1,18 @@
+{
+  "blocks": [
+    "Plan Comparison 2026",
+    "Plan Monthly price Documents",
+    "Basic 9 USD 1000",
+    "Pro 29 USD 10000",
+    "Enterprise 99 USD unlimited",
+    "All plans include the public regression dataset."
+  ],
+  "tables": [
+    [
+      ["Plan", "Monthly price", "Documents"],
+      ["Basic", "9 USD", "1000"],
+      ["Pro", "29 USD", "10000"],
+      ["Enterprise", "99 USD", "unlimited"]
+    ]
+  ]
+}

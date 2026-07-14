@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    "Meeting Room Schedule",
+    "Booking grid for the third floor. The header merges the two morning slots, and the afternoon workshop spans both rooms.",
+    "Room Morning Morning Afternoon\nRoom 09:00 11:00 Afternoon\nAoi Standup Design review Workshop\nKiku Interview Hiring sync Workshop",
+    "Bookings outside these slots go through the front desk."
+  ],
+  "tables": [
+    [
+      [{"text": "Room", "rowspan": 2}, {"text": "Morning", "colspan": 2}, {"text": "Afternoon", "rowspan": 2}],
+      ["09:00", "11:00"],
+      ["Aoi", "Standup", "Design review", {"text": "Workshop", "rowspan": 2}],
+      ["Kiku", "Interview", "Hiring sync"]
+    ]
+  ]
+}

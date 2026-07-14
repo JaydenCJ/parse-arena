@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Membership Application Form</title>
+</head>
+<body>
+<h1>Membership Application Form</h1>
+<p>Filled-in application received through the web portal. Field values must
+survive parsing verbatim for downstream extraction.</p>
+<!--
+  Form fixture: a table-based label/value layout (the most common layout for
+  born-digital forms) with colspan section headers. Ground truth carries the
+  expected key/value fields, so the field-recall metric checks that a parser
+  keeps the values findable in its text output.
+-->
+<table>
+<tr><th colspan="2">Applicant</th></tr>
+<tr><td>Full name</td><td>Hanako Tanaka</td></tr>
+<tr><td>Date of birth</td><td>1990-04-12</td></tr>
+<tr><td>Email</td><td>hanako@example.com</td></tr>
+<tr><th colspan="2">Membership</th></tr>
+<tr><td>Plan</td><td>Pro</td></tr>
+<tr><td>Start date</td><td>2026-08-01</td></tr>
+<tr><td>Annual fee</td><td>120 USD</td></tr>
+</table>
+<p>Signed by the applicant on 2026-07-02.</p>
+</body>
+</html>
